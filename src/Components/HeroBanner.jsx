@@ -1,9 +1,9 @@
 import React from "react";
-import img1 from "../assets/img/food_lady.avif";
-import img5 from "../assets/img/chocolate_food.avif";
-import img2 from "../assets/img/food_land.avif";
-import img3 from "../assets/img/woman_cutting.avif";
-import img4 from "../assets/img/food_landing.avif";
+import img1 from "../assets/img/9ja-soup.png";
+import img5 from "../assets/img/9ja-soup2.png";
+import img2 from "../assets/img/swipe-meal2.png";
+import img3 from "../assets/img/9ja-soup3.png";
+
 // import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { EffectFade } from 'swiper/modules';
@@ -22,21 +22,51 @@ const HeroBanner = () => {
         slidesPerView={1}
         effect={"fade"}
        
-        autoplay={{ delay: 4500, disableOnInteraction: false }}
-        modules={[EffectFade, Navigation, Pagination, Autoplay]}
-        className="flex justify-between h-[80vh] border-2y border-[green]y"
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        modules={[EffectFade, Autoplay]}
+        className="flex justify-between h-[80vh] border-2y border-[green]y bg-[#F2F2F0]"
       >
         <SwiperSlide className="slide1">
-          <span>2</span>
+          <div className='bg-[#F2F2F0] W-[50%] flex justify-center items-center p-6'>
+          <h1 className="">Perfect Fuel</h1>
+          </div>
+
+          <div className="imageContainer1 bg-[#F2F2F0] flex justify-center items-center w-[50%] border-2y border-blue-500y">
+            <img src={img3} className='' width={700} height={400}/>
+          </div>
         </SwiperSlide>
+
         <SwiperSlide className="slide2">
           
+          <div className='bg-[#F2F2F0] w-[50%] flex justify-center items-center p-6'>
+          <h1>When the Ingredients are Fresh</h1>
+          </div>
+
+          <div className="imageContainer2 bg-[#F2F2F0] flex justify-center items-center w-[50%] border-2y border-blue-500y">
+          <img src={img2} alt="" className='' width={700} height={400}/>
+         </div>
         </SwiperSlide>
+
         <SwiperSlide className="slide3">
+        <div className='bg-[#F2F2F0] w-[50%] flex justify-center items-center p-6'>
+          <h1>Let Food be thy Medicine and Medicine be thy Food</h1>
+        </div>
+        
+        <div className="imageContainer3 bg-[#F2F2F0] flex justify-center items-center w-[50%] border-2y border-blue-500y">
+          <img src={img1} className='' width={700} height={400}/>
+          </div>
           
         </SwiperSlide>
+
         <SwiperSlide className="slide4">
-          
+        <div className='bg-[#F2F2F0] w-[50%] flex justify-center items-center p-6'>
+          <h1>Beyound the Boundaries of Taste</h1>
+        </div>
+
+        <div className="imageContainer4 bg-[#F2F2F0] flex justify-center items-center w-[50%] border-2y border-blue-500y">
+          <img src={img5} className='' width={700} height={400}/>
+         </div>
+
         </SwiperSlide>
       </Swiper>
   

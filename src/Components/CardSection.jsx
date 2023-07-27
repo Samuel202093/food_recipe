@@ -1,22 +1,43 @@
 import React from 'react'
 import Dish from './Dish'
+import useSWR from 'swr'
 import img from '../assets/img/food_land.avif'
+import axios from 'axios'
 import { NavLink } from "react-router-dom";
 
+
+
+// using swr to fetch data
+const fetcher = (url)=> axios.get(url).then((res)=> res.data)
 const CardSection = () => {
+  let {data, error, isLoading} = useSWR('https://www.themealdb.com/api/json/v1/1/categories.php',fetcher)
+
+ 
+
+
+  //loading state
+  if (isLoading) {
+    // console.log('hi')
+    return <p>loading.....</p>
+  }
+
+  if (error) {
+    return <p className='text-red-600 font-semibold'>Error loading data</p>
+  }
+
   return (
     <section className='mt-12 lg:mt-8 flex flex-col gap-4'>
-      <h2 className='heading-explore text-2xl font-semibold text-center text-slate-600'>Explore Recipes</h2>
+      <h2 className='heading-explore text-2xl font-semibold text-center text-slate-600 mb-7'>Explore Recipes</h2>
     
-      <div className='flex justify-between gap-2 md:gap-3 w-[100%] md:w-[90%] lg:w-[50%] border-2y border-[#758C1F]y mx-0 md:mx-auto px-1 md:px-7 py-1 rounded-3xly overflow-x-scroll md:overflow-x-hidden'>
+      {/* <div className='flex justify-between gap-2 md:gap-3 w-[100%] md:w-[90%] lg:w-[50%] border-2y border-[#758C1F]y mx-0 md:mx-auto px-1 md:px-7 py-1 rounded-3xly overflow-x-scroll md:overflow-x-hidden'>
         <span className='border-2 cursor-pointer border-transparent text-[#2fb854]y text-slate-600 px-6 py-4 md:py-1 text-base font-sans font-semibold transition-all delay-150 ease-in-out  hover:bg-[#759f17] hover:rounded-3xl hover:text-[#F2F2F0]'>All</span>
         {/* <NavLink to='' className={({isActive, isPending})=> isPending ? 'pending':isActive? 'active':''}>Lunch</NavLink> */}
-        <span className='border-2y cursor-pointer border-transparent border-[1px] text-[#2fb854]y text-slate-600 px-6 py-1 text-base font-sans font-semibold transition-all delay-150 ease-in-out  hover:bg-[#759f17] hover:rounded-3xl hover:text-[#F2F2F0]'>Main Courses</span>
+        {/* <span className='border-2y cursor-pointer border-transparent border-[1px] text-[#2fb854]y text-slate-600 px-6 py-1 text-base font-sans font-semibold transition-all delay-150 ease-in-out  hover:bg-[#759f17] hover:rounded-3xl hover:text-[#F2F2F0]'>Main Courses</span>
         <span className='border-[1px] cursor-pointer border-transparent text-[#2fb854]y text-slate-600 px-6 py-4 md:py-1 text-base font-sans font-semibold transition-all delay-150 ease-in-out hover:bg-[#759f17] hover:rounded-3xl hover:text-[#F2F2F0]'>Desserts</span>
-        <span className='border-[1px] cursor-pointer border-transparent text-[#2fb854]y text-slate-600 px-6 py-1 text-base font-sans font-semibold transition-all delay-150 ease-in-out  hover:bg-[#759f17] hover:rounded-3xl hover:text-[#F2F2F0]'>Side Dishes</span>
-      </div>
+        <span className='border-[1px] cursor-pointer border-transparent text-[#2fb854]y text-slate-600 px-6 py-1 text-base font-sans font-semibold transition-all delay-150 ease-in-out  hover:bg-[#759f17] hover:rounded-3xl hover:text-[#F2F2F0]'>Side Dishes</span> */}
+      {/* </div>  */}
 
-      <Dish />
+      <Dish data={data}/>
 
       {/* subscription  section*/}
 

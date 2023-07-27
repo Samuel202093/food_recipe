@@ -6,21 +6,21 @@ const Scroll = () => {
       <div class="marquee__content">
       
       <ul class="list-inline">
-          <li>Perfect fuel.</li>
+          <li className='uppercase'>Perfect fuel.</li>
         </ul>
         <ul class="list-inline">
-          <li>Chill in the warmth we bring to your tummy and heart.</li>
-        </ul>
-
-        <ul class="list-inline">
-            <li>Subscribe to our Newsletter for latest recipes and expert tips.</li>
+          <li className='uppercase'>Chill in the warmth we bring to your tummy and heart.</li>
         </ul>
 
         <ul class="list-inline">
-          <li>Count only the memories, not the calories.</li>
+            <li className='uppercase'>Subscribe to our Newsletter for latest recipes and expert tips.</li>
+        </ul>
+
+        <ul class="list-inline">
+          <li className='uppercase'>Count only the memories, not the calories.</li>
         </ul>
         <ul class="list-inline">
-            <li>Food from the heaven.</li>
+            <li className='uppercase'>Food from the heaven.</li>
         </ul>
 
       </div>
