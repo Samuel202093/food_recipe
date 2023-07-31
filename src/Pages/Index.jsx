@@ -2,14 +2,16 @@ import React from 'react'
 import HeroBanner from '../Components/HeroBanner'
 import CardSection from '../Components/CardSection'
 import Scroll from '../Components/Scroll'
+import News from '../Components/News'
 
 const Index = () => {
   return (
-    <div>
+    <>
       <Scroll/>
       <HeroBanner/>
       <CardSection/>
-    </div>
+      <News />
+    </>
   )
 }
 

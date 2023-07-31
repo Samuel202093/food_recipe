@@ -1,40 +1,22 @@
 import { useState } from 'react'
-import NavBar from './Components/NavBar'
 import Index from './Pages/Index'
-
-import Footer from './Components/Footer'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, createRoutesFromElements,Route } from 'react-router-dom'
 import Meals from './Pages/Meals'
+import RootLayout from './Components/RootLayout'
 
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Index/>
-  },
-  {
-    path: '/meals',
-    element: <Meals/>
-  },
- 
-])
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path='/' element={<RootLayout />}>
+     <Route index element={<Index />}/>
+     <Route path='/meals' element={<Meals />}/>
+  </Route>
+))
 
 
 
 function App() {
-  
-
   return (
-    <main className='bg-[#BFBFBD]y'>
-      <NavBar />
-      <RouterProvider router={router}>
-      {/* <h1 className='text-xl text-red-600y'>Welcome Page</h1> */}
-      <Index/>
-      <Meals/>
-      
-      </RouterProvider>
-      <Footer />
-    </main>
+      <RouterProvider router={router}/>
   )
 }
 

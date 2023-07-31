@@ -19,10 +19,9 @@ a.active{
   color: red;
 }
 
-.nav-btn:hover{
-  /* box-shadow: rgba(217, 124, 11, 0.6) 0px 10px 36px 0px, rgba(217, 124, 11, 0.6) 0px 0px 0px 1px; */
+/* .nav-btn:hover{
   box-shadow: rgba(0, 0, 0, 0.6) 0px 10px 36px 0px, rgba(0, 0, 0, 0.6) 0px 0px 0px 1px;
-}
+} */
 
 .saveIcon:hover ~ span{
   display: block;
@@ -92,7 +91,6 @@ a.active{
 
 
 .heading-explore, .news-heading{
-  /* color: #BF0606; */
   font-family: "lugrasimo";
 }
 
@@ -121,10 +119,6 @@ a.active{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/* .dish-card:hover{
-  box-shadow: rgba(118,142,31, 0.4) 0px 0px 0px 2px, rgba(118,142,31, 0.65) 0px 4px 6px -1px, rgba(118,142,31, 0.08) 0px 1px 0px inset;
-} */
-
 .order-icon:hover + .order-span, .rating-icon:hover + .rating-span, .comment-icon:hover + .comment-span  {
   display: block;
   transition: ease-in 0.3s;
@@ -135,9 +129,9 @@ a.active{
 
 .code-container {
   background-color: #F2F2F0;
-  /* border-radius: 8px; */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 16px;
+  /* padding: 16px; */
+  padding: 20px;
   min-height: 40vh;
   width: 30%;
 }
@@ -172,6 +166,10 @@ a.active{
   animation: slide-in-top 0.5s both;
 }
 
+.socialContainer:hover  ~ .youtube{
+  display: block;
+}
+
 @keyframes slide-in-top{
   0% {
     transform: translateY(-35px);
@@ -193,6 +191,10 @@ a.active{
 
   .list-inline {
     margin-left: 110px;
+  }
+
+  .slide1 h1, .slide2 h1, .slide3 h1, .slide4 h1{
+    font-size: 1.5rem;
   }
 }
 
