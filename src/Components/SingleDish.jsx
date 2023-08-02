@@ -1,8 +1,7 @@
-import React, {useState} from 'react'
-import { IoIosArrowRoundForward } from 'react-icons/io'
+import React from 'react'
 import { FaYoutube } from 'react-icons/fa'
 import { VscChromeClose } from 'react-icons/vsc'
-import { Link } from 'react-router-dom'
+
 
 const SingleDish = ({showModal, setShowModal, item}) => {
 
@@ -37,7 +36,7 @@ const SingleDish = ({showModal, setShowModal, item}) => {
 
                 <div className='flex'>
                   <div className='socialContainer h-[45px] w-[45px] bg-[#F2F2F0] text-[rgba(0,0,0,0.6)] cursor-pointer hover:bg-[#CD201F] hover:text-[#F2F2F0] transition-all delay-150 ease-in-out flex justify-center items-center rounded-[50%]'>
-                    <Link to={`${item.data.strYoutube}`} className='socialIcon text-xl'><FaYoutube/></Link>
+                    <a href={`${item.data.strYoutube}`} target='_blank' className='socialIcon text-xl'><FaYoutube/></a>
                  </div>
                  <div className='youtube ml-5 hidden transition-all delay-150 ease-in-out'>
                     <span className='flex text-[#f2f2f0] font-semibold bg-slate-600 text-sm py-2 px-2'>Link to youtube video</span>

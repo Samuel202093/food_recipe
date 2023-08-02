@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import logoImg from '../assets/img/urban-logo.png'
+import {motion} from 'framer-motion'
 import { MdOutlineSearch } from 'react-icons/md'
 import { useNavigate, useLocation } from 'react-router-dom'
 import {RxHamburgerMenu} from 'react-icons/rx'
@@ -90,11 +91,11 @@ const handleHome = ()=>{
     
       {iconOpen === true ? <RxHamburgerMenu className='md:hidden text-3xl transition-all delay-[0.5s] ease-in-out mt-2 ml-3 text-[#D97C0B]y' onClick={handleShow}/>: <IoMdClose className='text-3xl mt-1 ml-3 text-slate-600 transition-all delay-[0.5s] ease-in-out' onClick={handleClose}/>}
 
-      {navMobile &&  <div className='absolute top-[9%] right-0 flex flex-col gap-5 justify-centery items-start px-2 border-2y py-4 cursor-pointer border-red-700y w-[60%] bg-slate-600 h-[100vh] z-[10]'>
+      {navMobile &&  <motion.div animate={{opacity:1}} initial={{opacity:0}} transition={{duration:0.6}} className='absolute top-[9%] right-0 flex flex-col gap-5 justify-centery items-start px-2 border-2y py-4 cursor-pointer border-red-700y w-[60%] bg-slate-600 h-[100vh] z-[10]'>
           <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleMobileSignUp}><BiSolidUserPlus className='text-2xl'/> Sign Up</span>
           <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleMobileLogin}><BiLogIn className='text-2xl'/> Login</span>
           <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleHomeMobile}><CgHomeScreen className='text-2xl'/> Home</span>
-      </div>}
+      </motion.div>}
      
       <div className='hidden md:flex justify-between lg:w-[15%] border-2y border-blacky px-5y'>
         <button className='nav-btn border-[1px] border-[red]y border-slate-600 transition-all delay-75 ease-in-out text-[#F2F2F0]y text-slate-600 text-base px-4 mr-2 lg:mr-0 py-1 bg-[rgb(217,124,11)]y font-semibold cursor-pointer rounded-3xl hover:border-[1px] hover:bg-slate-600 hover:border-[#D97C0B]y hover:text-[#F2F2F0] hover:border-slate-600 hover:text-slate-600y' onClick={handleSignUp}>Sign Up</button>

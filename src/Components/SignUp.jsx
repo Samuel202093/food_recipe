@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
+import { motion } from 'framer-motion'
 import { BiSolidUserPlus } from 'react-icons/bi'
 import { UseDataContext } from '../context/context'
 import { toast } from 'react-toastify'
@@ -38,7 +39,7 @@ const SignUp = ({handleSwitch, signUp, setSignUp}) => {
     
 
   return (
-    <div className='absolute top-0 z-[1000] flex justify-center items-centery border-2y border-red-700y w-[100%] h-[150vh]y h-[100vh] bg-[rgba(0,0,0,0.7)] overflow-y-scrolly'>
+    <motion.div animate={{opacity:1}} initial={{opacity:0}} transition={{duration:0.6}} className='absolute top-0 z-[1000] flex justify-center items-centery border-2y border-red-700y w-[100%] h-[150vh]y h-[100vh] bg-[rgba(0,0,0,0.7)] overflow-y-scrolly'>
         <AiOutlineClose className='absolute top-2 bg-[#f2f2f0] rounded-md right-2 text-3xl cursor-pointer' onClick={()=>{setSignUp(!signUp); document.body.style.overflow = "unset"}}/>
 
         <div className='flex flex-col gap-5 w-[100%] lg:w-[30%] h-[100vh] lg:mt-8 p-4 bg-[#f2f2f0] rounded-md text-slate-600 overflow-y-scrolly'>
@@ -78,7 +79,7 @@ const SignUp = ({handleSwitch, signUp, setSignUp}) => {
             </div>
         </div>
        
-    </div>
+    </motion.div>
   )
 }
 

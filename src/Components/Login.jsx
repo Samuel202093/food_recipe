@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { BiLogIn } from 'react-icons/bi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { UseDataContext } from '../context/context'
@@ -36,9 +37,9 @@ const Login = ({login, setLogin, handleSwitch }) => {
 
 
   return (
-    <div className='absolute top-0 z-[1000] flex justify-center items-center border-2y border-red-700y w-[100%] h-[100vh] bg-[rgba(0,0,0,0.7)] cursor-pointer'>
+    <motion.div animate={{opacity:1}} initial={{opacity:0}} transition={{duration:0.6}} className='absolute top-0 z-[1000] flex justify-center items-center border-2y border-red-700y w-[100%] h-[100vh] bg-[rgba(0,0,0,0.7)] cursor-pointer'>
         <AiOutlineClose className='absolute top-2 bg-[#f2f2f0] rounded-md right-2 text-3xl' onClick={()=> {setLogin(!login); document.body.style.overflow = "unset"}}/>
-        <div className='flex flex-col gap-5 w-[100%] lg:w-[30%] h-[65vh] p-4 bg-[#f2f2f0] rounded-md text-slate-600'>
+        <div  className='flex flex-col gap-5 w-[100%] lg:w-[30%] h-[65vh] p-4 bg-[#f2f2f0] rounded-md text-slate-600'>
             <div className='flex justify-center'>
                 <h2 className='flex text-2xl font-bold gap-x-3 text-slate-600'><BiLogIn className='mt-[0.35rem]'/> Login</h2>
             </div>
@@ -61,7 +62,7 @@ const Login = ({login, setLogin, handleSwitch }) => {
                     <span className='font-semibold text-sm'>New to <em>Urban Plate?</em>&nbsp; <small className='text-sm text-[#759f17] font-bold cursor-pointer' onClick={handleSwitch}>Sign Up</small></span>
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
