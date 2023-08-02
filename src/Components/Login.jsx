@@ -59,7 +59,7 @@ const Login = ({login, setLogin, handleSwitch }) => {
             </div>
 
             <div>
-                    <span className='font-semibold text-sm'>New to <em>Urban Plate?</em>&nbsp; <small className='text-sm text-[#759f17] font-bold cursor-pointer' onClick={handleSwitch}>Sign Up</small></span>
+                    <span className='font-semibold text-sm'>New to <em>Urban Plate?</em>&nbsp; <small className='text-base text-[#759f17] font-bold cursor-pointer' onClick={handleSwitch}>Sign Up</small></span>
             </div>
         </div>
     </motion.div>

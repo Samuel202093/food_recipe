@@ -20,7 +20,7 @@ const Dish = (props) => {
             <h2 className='font-medium font-sans text-base'>{data.data.strMeal}...</h2>
         </div>
         <div>
-            <span className='text-sm font-sans'>{data.data.strInstructions.slice(0,50)}....<small className='text-[#759f17]' onClick={handleModal}>readmore</small></span>
+            <span className='text-sm font-sans'>{data.data.strInstructions.slice(0,50)}....<small className='text-[#759f17] text-base font-bold' onClick={handleModal}>readmore</small></span>
             {showModal && <SingleDish item={data} showModal={showModal} setShowModal={setShowModal}/>}
 
         </div>

@@ -2,10 +2,12 @@ import React,{useState} from 'react'
 import logoImg from '../assets/img/urban-logo.png'
 import {motion} from 'framer-motion'
 import { MdOutlineSearch } from 'react-icons/md'
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation, Link } from 'react-router-dom'
 import {RxHamburgerMenu} from 'react-icons/rx'
 import { BiLogIn, BiSolidUserPlus } from 'react-icons/bi'
-import { CgHomeScreen } from 'react-icons/cg'
+import { MdFreeBreakfast} from 'react-icons/md'
+import { CgHomeScreen, CgMenuCake } from 'react-icons/cg'
+import { GiSeahorse, GiGrainBundle } from 'react-icons/gi'
 import { IoMdClose } from 'react-icons/io'
 import { UseDataContext } from '../context/context'
 import Login from './Login'
@@ -77,6 +79,34 @@ const handleHome = ()=>{
   navigate('/')
 }
 
+const handleDessert = ()=>{
+  navigate('/desserts')
+  setNavMobile(!navMobile)
+  setIconOpen(!iconOpen)
+  document.body.style.overflow = 'unset' 
+}
+
+const handleSeafood = ()=>{
+  navigate('/seafoods')
+  setNavMobile(!navMobile)
+  setIconOpen(!iconOpen)
+  document.body.style.overflow = 'unset' 
+}
+
+const handleBreakfast = ()=>{
+  navigate('/breakfasts')
+  setNavMobile(!navMobile)
+  setIconOpen(!iconOpen)
+  document.body.style.overflow = 'unset' 
+}
+
+const handlePasta = ()=>{
+  navigate('/pastas')
+  setNavMobile(!navMobile)
+  setIconOpen(!iconOpen)
+  document.body.style.overflow = 'unset' 
+}
+
   return (
     <nav className='flex justify-around py-3 md:py-4 px-2 lg:px-2 bg-red-500y h-[9vh] lg:h-[11vh] overflow-y-hidden'>
 
@@ -92,6 +122,10 @@ const handleHome = ()=>{
       {iconOpen === true ? <RxHamburgerMenu className='md:hidden text-3xl transition-all delay-[0.5s] ease-in-out mt-2 ml-3 text-[#D97C0B]y' onClick={handleShow}/>: <IoMdClose className='text-3xl mt-1 ml-3 text-slate-600 transition-all delay-[0.5s] ease-in-out' onClick={handleClose}/>}
 
       {navMobile &&  <motion.div animate={{opacity:1}} initial={{opacity:0}} transition={{duration:0.6}} className='absolute top-[9%] right-0 flex flex-col gap-5 justify-centery items-start px-2 border-2y py-4 cursor-pointer border-red-700y w-[60%] bg-slate-600 h-[100vh] z-[10]'>
+        <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleBreakfast}><MdFreeBreakfast className='text-2xl'/> Breakfasts</span>
+        <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleDessert}><CgMenuCake className='text-2xl'/> Desserts</span>
+        <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleSeafood}><GiSeahorse className='text-2xl'/> Seafoods</span>
+        <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handlePasta}><GiGrainBundle className='text-2xl'/> Pastas</span>
           <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleMobileSignUp}><BiSolidUserPlus className='text-2xl'/> Sign Up</span>
           <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleMobileLogin}><BiLogIn className='text-2xl'/> Login</span>
           <span className='flex gap-x-4 text-base font-semibold text-[#f2f2f0]' onClick={handleHomeMobile}><CgHomeScreen className='text-2xl'/> Home</span>

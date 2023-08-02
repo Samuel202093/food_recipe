@@ -51,7 +51,7 @@ const Meals = () => {
     }
 
 // pagination logic
-const recordsPerPage = 9; // number of data on each page
+const recordsPerPage = 6; // number of data on each page
 const lastIndex = currentPage * recordsPerPage;
 const firstIndex = lastIndex - recordsPerPage;
 
@@ -85,15 +85,15 @@ for(let i = 1; i<= Math.ceil(data?.meals.length / recordsPerPage); i++){
   return (
     <div className='min-h-[70vh] mt-5'>
       <h2 className='heading-explore text-2xl font-semibold text-center text-slate-600 mb-7'>{`Varieties of ${queryString} Meals`}</h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-3 w-[100%] lg:w-[85%] min-h-[65vh] mx-0 md:mx-auto p-3 '>
+      <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-y-6 gap-3 w-[100%] lg:w-[85%] min-h-[65vh] mx-0 md:mx-auto p-3 '>
 
         {/* meals card */}
 
         {data?.meals.slice(firstIndex, lastIndex).map((x, index)=>{
             return(
-                <div className='dish-card relative flex flex-col gap-1 w-[100%] lg:w-[95%] min-h-[40vh] border-[1px] border-transparent p-4 transition-all ease-in-out delay-[0.4s] hover:border-[#758C1F]y cursor-pointer rounded-2xl text-slate-600' key={index}>
-            <div className='w-full h-[50vh] border-2y border-[green]y rounded-2xl px-2 py-2' >
-                <img src={x.strMealThumb} alt="food image" className='w-full h-[45vh] object-contain rounded-2xl'/>
+                <div className='dish-card relative flex flex-col gap-4 md:gap-1 w-[100%] lg:w-[95%] min-h-[40vh] border-[1px] border-transparent p-4 transition-all ease-in-out delay-[0.4s] hover:border-[#758C1F]y cursor-pointer rounded-2xl text-slate-600' key={index}>
+            <div className='w-full h-[25vh] md:h-[50vh] border-2y border-[green]y rounded-2xl px-2y py-2y' >
+                <img src={x.strMealThumb} alt="food image" className='w-full h-[25vh] md:h-[45vh] object-cover md:object-contain rounded-xl'/>
             </div>
             <div className='flex flex-col gap-2 px-2'>
                 <div>
@@ -105,7 +105,7 @@ for(let i = 1; i<= Math.ceil(data?.meals.length / recordsPerPage); i++){
         })}
 
       </div>
-      {data?.meals.length > 9 ? <Pagination numbers={numbers} currentPage={currentPage} changeCurrrentPage={changeCurrrentPage} nextPage={nextPage} prePage={prePage}/>: ''}
+      {data?.meals.length > 6 ? <Pagination numbers={numbers} currentPage={currentPage} changeCurrrentPage={changeCurrrentPage} nextPage={nextPage} prePage={prePage}/>: ''}
     </div>
   )
 }

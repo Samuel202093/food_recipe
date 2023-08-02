@@ -20,7 +20,7 @@ const Item = ({data}) => {
                     <h2 className='font-medium font-sans text-base'>{data.strCategory}</h2>
                 </div>
                 <div>
-                    <span className='text-sm font-sans'>{data.strCategoryDescription.slice(0,70)}...<small className='text-[#759f17]' onClick={handleModal}>readmore</small></span>
+                    <span className='text-sm font-sans'>{data.strCategoryDescription.slice(0,70)}...<small className='text-[#759f17] font-bold text-base' onClick={handleModal}>readmore</small></span>
                     {showModal && <SingleItem showModal={showModal} setShowModal={setShowModal} item={data}/>}
 
                 </div>

@@ -8,7 +8,7 @@ const RootLayout = () => {
   return (
     <>
       <NavBar />
-      <main>
+      <main className='min-h-[55vh]'>
         <Outlet />
       </main>
       <ToastContainer/>

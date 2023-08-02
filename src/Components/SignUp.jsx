@@ -75,7 +75,7 @@ const SignUp = ({handleSwitch, signUp, setSignUp}) => {
             </div>
 
             <div>
-                    <span className='font-semibold text-sm'>Already on <em>Urban Plate?</em>&nbsp; <small className='text-sm text-[#759f17] font-bold cursor-pointer' onClick={handleSwitch}>Login</small></span>
+                    <span className='font-semibold text-sm'>Already on <em>Urban Plate?</em>&nbsp; <small className='text-base text-[#759f17] font-bold cursor-pointer' onClick={handleSwitch}>Login</small></span>
             </div>
         </div>
        
