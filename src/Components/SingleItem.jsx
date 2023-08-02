@@ -13,7 +13,7 @@ const SingleItem = ({showModal, setShowModal, item}) => {
   return (
     <div className='flex justify-center items-center fixed absolutey top-[0%] z-[1000]y left-0 min-h-[100vh]y h-[100vh] w-[100%] bg-[rgba(0,0,0,0.4)] bg-red-700y cursor-pointer border-2y border-red-800y z-[1000] overflow-scroll lg:overflow-hidden'>
         <VscChromeClose className='absolute top-[1%] md:top-[3%] z-[1000]  right-[2%] text-3xl bg-[#F2F2F0] cursor-pointer' onClick={handleClose}/>
-      {/* <h1>Modal for single Dish</h1> */}
+     
       <div className='blocky absolute top-0 lg:static lg:flex w-[100%] lg:w-[70%] min-h-[100vh] lg:min-h-[80vh] h-[90vh]y bg-[#F2F2F0] border-2y border-red-800y'>
             <div className='w-[100%] lg:w-[50%] min-h-[30vh] lg:min-h-[80vh] p-6'>
                 <img src={item.strCategoryThumb} alt="recipe-image" className='w-[100%] h-full object-contain rounded-xly' width={500} height={600}/>

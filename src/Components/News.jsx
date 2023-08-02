@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import img from '../assets/img/carrot-juice.png'
 import img2 from '../assets/img/fruitsandvegetables.jpg'
 import img3 from '../assets/img/seafood.avif'
-import {toast, ToastContainer} from 'react-toastify'
+import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { Slide } from 'react-toastify'
 

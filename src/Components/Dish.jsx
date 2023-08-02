@@ -9,9 +9,6 @@ const Dish = (props) => {
       document.body.style.overflow = "hidden";
   }
     const data = props
-    // console.log(data)
-
-
     
   return (
     <div className='dish-card relative flex flex-col gap-1 w-[100%] lg:w-[95%] min-h-[40vh] border-[1px] border-transparent p-4 transition-all ease-in-out delay-[0.4s] hover:border-[#758C1F]y cursor-pointer rounded-xl md:rounded-2xl text-slate-600'>

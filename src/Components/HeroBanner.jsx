@@ -3,10 +3,7 @@ import img1 from "../assets/img/9ja-soup.png";
 import img5 from "../assets/img/9ja-soup2.png";
 import img2 from "../assets/img/swipe-meal2.png";
 import img3 from "../assets/img/9ja-soup3.png";
-
-// import { motion } from 'framer-motion'
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { EffectFade } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";

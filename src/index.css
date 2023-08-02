@@ -89,6 +89,20 @@ a.active{
   }
 }
 
+/* styling for form error  */
+.error{
+  color: red;
+  font-size: 12px;
+  display: none;
+}
+
+input:invalid[focused = "true"] ~ .error{
+  display: block;
+}
+
+input:invalid[focused = "true"]{
+  border: 1px solid red;
+}
 
 .heading-explore, .news-heading{
   font-family: "lugrasimo";

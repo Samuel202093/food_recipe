@@ -6,20 +6,15 @@ import { Link } from 'react-router-dom'
 
 const SingleDish = ({showModal, setShowModal, item}) => {
 
-   
-  // document.body.style.overflow = 'unset' 
-
     const handleClose = ()=>{
         setShowModal(!showModal)
         document.body.style.overflow = 'unset' 
     }
 
-    console.log(item)
-
   return (
     <div className='flex justify-center items-center fixed absolutey top-[0%] z-[1000]y left-0 min-h-[100vh] h-[100vh]y w-[100%] bg-[rgba(0,0,0,0.4)] bg-red-700y cursor-pointer border-2y border-red-800y z-[1000] overflow-scroll lg:overflow-hidden'>
         <VscChromeClose className='absolute top-[1%] md:top-[3%] z-[1000] md:z-[0]  right-[2%] text-3xl bg-[#F2F2F0] cursor-pointer' onClick={handleClose}/>
-      {/* <h1>Modal for single Dish</h1> */}
+      
       <div className='blocky absolute top-0 lg:static lg:flex w-[100%] lg:w-[70%] min-h-[100vh]y h-[100vh] lg:h-[80vh] lg:min-h-[80vh]y h-[90vh]y bg-[#F2F2F0] border-2y border-red-800y overflow-y-scroll'>
             <div className='w-[100%] lg:w-[50%] min-h-[30vh] lg:min-h-[80vh] p-6'>
                 <img src={item.data.strMealThumb} alt="recipe-image" className='w-[100%] h-full object-contain rounded-xly' width={500} height={600}/>
@@ -48,9 +43,6 @@ const SingleDish = ({showModal, setShowModal, item}) => {
                     <span className='flex text-[#f2f2f0] font-semibold bg-slate-600 text-sm py-2 px-2'>Link to youtube video</span>
                   </div>
               </div>
-                {/* <div className='flex'>
-                    <Link to={'/meals'} state={{ queryString: item.strCategory }} className='hiddeny flex  mt-0 ml-1 border-[1px]y border-slate-600y bg-slate-600 text-[#F2F2F0] px-2 py-2 text-base font-semibold'>{`View ${item.strCategory} meals`} <IoIosArrowRoundForward className='text-2xl font-bold'/></Link>
-                </div> */}
             </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import Dish from '../Components/Dish'
 import axios from 'axios'
 import useSWR from 'swr'
 import networkError from '../assets/img/network-error.gif'
+import imgError from '../assets/img/error.png'
 import loader from '../assets/img/recipe-loader.gif'
 
 
@@ -16,6 +17,20 @@ export const dataContext = createContext()
 export const DataContextProvider = ({children})=>{
     const [search, setSearch] = useState('')
     const [searchData, setSearchData] = useState([])
+    const [formData, setFormData] = useState({
+      firstname: '',
+      lastname: '',
+      phoneNumber: '',
+      email: '',
+      password: ''
+  })
+  const [focused, setFocused] = useState({
+      firstname: false,
+      lastname: false,
+      phoneNumber: false,
+      email: false,
+      password: false
+  })
     
 
     let {data, error, isLoading} = useSWR('https://www.themealdb.com/api/json/v1/1/categories.php',fetcher)
@@ -62,12 +77,24 @@ export const DataContextProvider = ({children})=>{
         setSearch(e.target.value)
     }
 
+    
+  const handleFocus = (e)=>{
+    setFocused({...focused, [e.target.name]: "true"})
+}
+
+const handleChangeForm = (e)=>{
+    setFormData({...formData, [e.target.name]: e.target.value})
+    setFocused(false)
+}
+
 
     const recipeResult = (recipes, query)=>{
         let filteredRecipe = recipes
         if (query) {
             filteredRecipe = searchData
-            return (filteredRecipe.meals?.length > 0 ? filteredRecipe.meals.map((x, index)=> <Dish key={index} data={x} />):<div>error loading data</div>)
+            return (filteredRecipe.meals?.length > 0 ? filteredRecipe.meals.map((x, index)=> <Dish key={index} data={x} />):<div className="absolute flex justify-center flex-col justify-centery items-center gap-2 border-2y mx-0 lg:mx-auto mt-[-1.5rem] border-red-700y min-h-[40vh] w-[98%] lg:w-[85%]"><img src={imgError} className="w-[95%] lg:w-[30%] h-[50vh]"/> <h1 className="text-xl font-semibold">Oops! Result not found</h1>
+            <button className="bg-slate-600 text-[#f2f2f0] font-semibold rounded px-3 py-[0.3rem] " onClick={()=> window.location.reload(true)}>Refresh</button>
+          </div>)
         }
         return filteredRecipe.map((x, index)=> <Item key={index} data={x}/>)
     }
@@ -75,7 +102,7 @@ export const DataContextProvider = ({children})=>{
 
 
     return(
-    <dataContext.Provider value={{search, setSearch, handleChange, recipeResult, data}}>
+    <dataContext.Provider value={{search, setSearch, handleChange, recipeResult, data, handleChangeForm, formData, handleFocus, focused, setFocused, setFormData}}>
         {children}
     </dataContext.Provider>
     )
